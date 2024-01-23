@@ -2,9 +2,9 @@ import pygame
 from random import randrange
 
 # Introducing all variables
-window = 1000 #variable for window size
+window = 1 #variable for window size
 tile_size = 20 #
-range = (tile_size // 2, window - tile_size // 2, tile_size) #creates the range for where you'll randomly start
+range = (tile_size // 2, window - tile_size // 2, tile_size) #creates the rangefor where you'll randomly start
 get_random_position = lambda:[randrange(*range), randrange(*range)]  # Generating a random position for anything
 snake = pygame.rect.Rect([0, 0, tile_size - 2, tile_size - 2]) #creates the snake
 snake.center = get_random_position() 
@@ -17,11 +17,7 @@ food.center = get_random_position() # randomizing food random
 screen = pygame.display.set_mode([window] * 2) # displaying screen
 clock = pygame.time.Clock() # setting a time/clock
 dirs = {pygame.K_w: 1, pygame.K_s: 1, pygame.K_a: 1, pygame.K_d: 1} # dirs is the controls, we are using WASD on the keyboardto move our snake
-score = 0
 
-# Creating a score text on window
-label = (window, text="Score:{}".format(score), font=('ariel', 35), fill='white')
-label.pack()
 
 #controls of the snake
 while True:
